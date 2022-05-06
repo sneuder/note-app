@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import AddNote from "../addNote/addNote";
-import Note from "../note/note";
 
 const Modal = () => {
   const router = useRouter();
@@ -11,7 +10,7 @@ const Modal = () => {
       
     >
       {router.query.mode && <AddNote />}
-      {router.query.note && <Note />}
+      {router.query.note && <AddNote />}
     </div>
   );
 };
