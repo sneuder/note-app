@@ -54,8 +54,6 @@ const AddNote = () => {
     localStorage.setItem("note-app-nextjs", JSON.stringify(note));
   };
 
-  if (!shownNote.title || !shownNote.description) return <></>;
-
   return (
     <div className="w-10/12 sm:w-8/12 md:w-6/12 h-3/6 bg-[#ffffff] rounded p-5 flex flex-col">
       <input
@@ -63,13 +61,13 @@ const AddNote = () => {
         className="font-semibold border-b"
         placeholder="Title"
         id="title"
-        defaultValue={shownNote.title}
+        defaultValue={shownNote?.title}
         onChange={saveData}
       />
       <textarea
         className="h-full mt-3 text-sm"
         id="description"
-        defaultValue={shownNote.description}
+        defaultValue={shownNote?.description}
         onChange={saveData}
       ></textarea>
     </div>
