@@ -27,7 +27,7 @@ const AddNote = () => {
   });
 
   useEffect(() => {
-    const auxiliar = JSON.parse(localStorage.getItem("notes-app-nextjs"));
+    const auxiliar = JSON.parse(localStorage.getItem("notes-app-nextjs")) || [];
     const note = auxiliar.find((note) => note.id === router.query.note);
     setShownNote(note || { title: "", description: "" });
   }, []);
