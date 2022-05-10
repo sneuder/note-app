@@ -22,7 +22,7 @@ const Notes = () => {
           >
             <h3 className="font-bold">{note.title}</h3>
             <p className="pb-1 mb-1 text-xs border-b text-stone-500 ">
-              02/05/1956
+              {note.date}
             </p>
             <p className="text-sm font-extralight">{note.description}</p>
           </div>
