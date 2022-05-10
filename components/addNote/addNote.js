@@ -55,7 +55,7 @@ const AddNote = () => {
   };
 
   return (
-    <div className="w-10/12 sm:w-8/12 md:w-6/12 h-3/6 bg-[#ffffff] rounded p-5 flex flex-col">
+    <div className="w-10/12 sm:w-8/12 md:w-6/12 h-3/6 bg-[#ffffff] rounded p-5 flex flex-col absolute inset-0 z-10">
       <input
         type="text"
         className="font-semibold border-b"
