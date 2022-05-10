@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
-import { useEffect, useState, useId } from "react";
+import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 const AddNote = () => {
-  const firstId = useId();
   const router = useRouter();
   const [shownNote, setShownNote] = useState({});
 
@@ -18,7 +18,7 @@ const AddNote = () => {
         const notes = JSON.parse(localStorage.getItem("notes-app-nextjs")) || [];
         if(id) notes = notes.filter(note => note.id !== id);
 
-        note.id = id || firstId;
+        note.id = id || uuidv4();
         note.date = new Date().toDateString();
 
         notes.unshift(note);
