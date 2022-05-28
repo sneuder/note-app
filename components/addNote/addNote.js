@@ -1,10 +1,12 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import Context from "../../context/context";
 import { v4 as uuidv4 } from 'uuid';
 
 const AddNote = () => {
   const router = useRouter();
   const [shownNote, setShownNote] = useState({});
+  const {notes, setNotes} = useContext(Context);
 
   useEffect(() => {
     return () => {
@@ -24,6 +26,8 @@ const AddNote = () => {
         notes.unshift(note);
         localStorage.setItem("notes-app-nextjs", JSON.stringify(notes));
         localStorage.removeItem("note-app-nextjs");
+
+        setNotes(notes);
       }
     };
   });

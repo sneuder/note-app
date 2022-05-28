@@ -1,5 +1,2 @@
-const initialState = {
-  notes: []
-}
-
+const initialState = []
 export default initialState;

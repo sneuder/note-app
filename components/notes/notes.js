@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useRouter } from "next/router";
+import Context from "../../context/context";
 
 const Notes = () => {
   const router = useRouter();
-  const [notes, setNotes] = useState([]);
+  const {notes, setNotes} = useContext(Context);
 
-  useEffect(() => {
+  useEffect(()=> {
     setNotes(JSON.parse(localStorage.getItem("notes-app-nextjs")) || []);
-  }, []);
+  }, [])
 
   if (notes.length === 0) <></>;
 
